@@ -1,5 +1,5 @@
 {
-  "name": "finanzas-personales",
+  "name": "panel-nidoapp",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -27,10 +27,6 @@
     "react-router-dom": "7.18.1",
     "@tanstack/react-query": "5.101.4",
     "zustand": "5.0.14",
-    "recharts": "3.8.1",
-    "react-is": "19.2.8",
-    "@tanstack/react-table": "8.21.3",
-    "date-fns": "4.4.0",
     "@supabase/supabase-js": "2.110.8",
     "workbox-window": "7.4.1"
   },
