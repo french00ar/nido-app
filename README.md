@@ -1,8 +1,8 @@
-# Finanzas Personales
+# Panel NidoApp
 
 ## Descripción
 
-# Plan de construcción — Mini App de Finanzas Personales Este mini app conviene construirlo por etapas. Pega un prompt por vez en el mismo proyecto de Cosmos Code y revisa el resultado antes de enviar el siguiente. PROMPT 1 — BASE DEL APP Quiero una mini app de finanzas personales para alguien que quiere dejar de usar planillas y ordenar sus ingresos y gastos.
+# Base de NidoApp: inicio de sesión, panel y menú de navegación ## Qué vas a tener - Una pantalla de **inicio de sesión / crear cuenta** (modo demo: la sesión se guarda solo en este dispositivo, con un aviso visible de que es de prueba).
 
 ## Stack
 
@@ -11,25 +11,10 @@ React 19 · TypeScript · Vite · Tailwind CSS · PWA
 ## Estructura
 
 - `/src/App.tsx` — punto de entrada
-- `/src/components/LoginScreen.tsx` — Permite iniciar sesión o crear una cuenta para proteger los datos financieros personales.
-- `/src/components/FinanceLayout.tsx` — Envuelve las pantallas privadas con navegación lateral en escritorio, navegación inferior en móvil, encabezado y acceso a configuración.
-- `/src/components/FinanceDashboard.tsx` — Muestra el saldo del mes, ingresos, gastos, patrimonio neto, avances de presupuestos y los últimos movimientos en la moneda principal.
-- `/src/components/MovementsScreen.tsx` — Lista, filtra y busca ingresos y gastos del usuario por fecha, tipo, categoría y cuenta.
-- `/src/components/MovementFormScreen.tsx` — Permite crear y editar movimientos de ingreso o gasto con monto, categoría, fecha, cuenta, descripción y moneda.
-- `/src/components/BudgetsScreen.tsx` — Permite definir presupuestos mensuales por categoría y muestra lo gastado, lo disponible y el porcentaje utilizado.
-- `/src/components/BudgetFormScreen.tsx` — Permite crear y editar un presupuesto mensual asociado a una categoría y un límite de gasto.
-- `/src/components/GoalsScreen.tsx` — Muestra las metas financieras con monto objetivo, ahorro acumulado, fecha límite y progreso visual.
-- `/src/components/GoalFormScreen.tsx` — Permite crear y editar una meta financiera con nombre, monto objetivo, monto ahorrado y fecha límite.
-- `/src/components/AccountsScreen.tsx` — Lista las cuentas de efectivo, banco, tarjeta u otros medios y muestra el saldo de cada una.
-- `/src/components/AccountFormScreen.tsx` — Permite crear y editar cuentas con tipo, nombre y saldo actual.
-- `/src/components/NetWorthScreen.tsx` — Presenta el portafolio como cuentas más inversiones menos deudas, con totales convertidos a la moneda principal.
-- `/src/components/DebtsScreen.tsx` — Lista y resume los gastos registrados en la moneda principal del usuario.
-- `/src/components/DebtFormScreen.tsx` — Permite crear y editar un gasto con nombre, monto pendiente, fecha límite y estado.
-- `/src/components/InvestmentsScreen.tsx` — Lista inversiones con su moneda original, valor actual y valor convertido a la moneda principal mediante tasas manuales.
-- `/src/components/InvestmentFormScreen.tsx` — Permite crear y editar inversiones con nombre, valor, moneda propia, tasa de conversión manual y fecha de valoración.
-- `/src/components/SettingsScreen.tsx` — Permite elegir la moneda principal, configurar tasas manuales de referencia, editar categorías y administrar preferencias de la cuenta, incluido el modo accesible.
-- `/src/store/useEasyModeStore.ts` — Estado global del modo fácil/accesible con Zustand y persistencia en localStorage; es la única fuente de verdad que comparten el panel y Configuración.
-- `/src/components/FinancialAnalysisScreen.tsx` — Muestra una sección preparada para activar posteriormente el análisis financiero con IA, explicando que revisará movimientos, presupuestos, metas, cuentas, deudas e inversiones cuando se configure la integración.
+- `/src/components/LoginScreen.tsx` — Pantalla pública para iniciar sesión o crear una cuenta demo, con aviso visible de que la sesión solo se guarda en este dispositivo.
+- `/src/components/FinanceLayout.tsx` — Shell privado del panel con barra lateral en escritorio, barra inferior en celular, encabezado, navegación de accesos futuros y cierre de sesión.
+- `/src/components/FinanceDashboard.tsx` — Panel privado con saldo del mes, ingresos, gastos, patrimonio neto, avance de presupuestos, últimos movimientos y el interruptor de modo accesible/fácil. (pendiente: todavía es un marcador)
+- `/src/components/CosmosProtectedRoute.tsx` — Parte de control que redirige a /login cuando no existe una sesión demo activa y permite acceder al panel cuando sí existe.
 
 ## Instalación
 
